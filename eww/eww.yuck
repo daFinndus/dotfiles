@@ -1,0 +1,33 @@
+(include "modules/cava.yuck")
+(include "modules/clock.yuck")
+(include "modules/cpu.yuck")
+(include "modules/disk.yuck")
+(include "modules/mainframe.yuck")
+(include "modules/ram.yuck")
+
+(
+    defwindow statusbar
+        :monitor 0
+        :geometry ; Geometry of the window.
+        (
+            geometry ; Geometry of the window.
+            :anchor "top right" ; 
+            :x "0.5%" ; 
+            :y "0.75%" ; Will be relative to anchor.
+            :width "400px" ; Width and height of the window.
+            :height "98.5%" ; Values may be provided in px or %.
+        )
+        (
+            box
+            :class "window"
+            :orientation "v"
+            :width "400px"
+            :height "100%"
+            (clock)
+            (mainframe)
+            (cpu)
+            (ram)
+            (disk)
+            (cava)
+        )
+)

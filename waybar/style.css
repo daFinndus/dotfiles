@@ -1,0 +1,107 @@
+@import "colors.css";
+@import "static-colors.css";
+
+* {
+  font-family: JetBrainsNF Mono;
+  font-weight: bolder;
+  font-size: 12px;
+}
+
+/* Main status bar */
+window#waybar {
+  color: @foreground;
+  background-color: transparent;
+  border-radius: 8px;
+}
+
+/* Hoverables */
+#clock:hover,
+#network:hover,
+#bluetooth:hover,
+#custom-battery:hover,
+#custom-brightness:hover,
+#custom-audio:hover {
+  color: @color4;
+}
+
+/* Spacer */
+#custom-spacer {
+  min-width: 12px;
+}
+
+/* States */
+.muted { color: @muted; }
+.warning { color: @warning; }
+.critical { color: @critical; }
+.charging { color: @charging; }
+
+/* Buttons */
+button {
+  border-radius: 8px;
+  min-width: 36px;
+  color: @foreground;
+  background-color: transparent;
+}
+
+button:hover {
+  color: @color4;
+  background-color: red;
+}
+
+/* Tooltips */
+tooltip {
+  border: 2px solid @foreground;
+  border-radius: 10px;
+  background-color: @background;
+}
+
+tooltip label {
+  margin: 2px 4px;
+  font-weight: normal;
+}
+
+tooltip decoration {
+  border: none;
+  background-color: transparent;
+}
+
+/* Custom Modules with a ascii bar */
+#custom-battery,
+#custom-audio,
+#custom-brightness {
+  min-width: 152px;
+}
+
+/* Default modules */
+
+#network,
+#bluetooth,
+#pulseaudio {
+  min-width: 24px;
+}
+
+#clock {
+  min-width: 64px;
+  margin: 16px;
+}
+
+#tray {
+  margin: 16px;
+}
+
+#workspaces > *:hover {
+  background-color: transparent;
+}
+
+/* Module bars */
+.modules-left,
+.modules-center,
+.modules-right {
+  background-color: @background;
+  border-radius: 8px;
+}
+
+.modules-left,
+.modules-right {
+  min-width: 724px;
+}

@@ -1,0 +1,36 @@
+(
+    defpoll ram-percentage
+    :interval "1.5s"
+    :initial "12.0"
+    "./scripts/ram.py percentage"
+)
+
+(
+    defpoll ram-bar
+    :interval "3s"
+    :initial "[░░░░░░░░░░]"
+    "./scripts/ram.py bar"
+)
+
+(
+    defwidget ram []
+    (
+        box
+        :class "widget"
+        :orientation "h"
+        :valign "start"
+        :halign "center"
+        (
+            label
+            :text "RAM USAGE"
+        )
+        (
+            label
+            :text ram-bar
+        )
+        (
+            label
+            :text ram-percentage
+        )
+    )
+)

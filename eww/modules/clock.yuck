@@ -1,0 +1,18 @@
+(
+    defpoll time 
+    :interval "1s"
+    "date '+%H:%M:%S'"
+)
+
+(
+    defwidget clock []
+    (
+        box
+        :class "widget"
+        :valign "start"
+        (
+            label
+            :text time
+        )
+    )
+)

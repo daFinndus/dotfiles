@@ -1,0 +1,14 @@
+# Ignore
+/*
+
+# Allow
+!/.gitignore
+
+!/alacritty
+!/cava
+!/eww
+!/fastfetch
+!/wal
+!/hypr
+!/waybar
+!/rofi

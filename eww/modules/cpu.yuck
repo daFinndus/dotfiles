@@ -1,0 +1,36 @@
+(
+    defpoll cpu-percentage
+    :interval "1.5s"
+    :initial "4.0"
+    "./scripts/cpu.py percentage"
+)
+
+(
+    defpoll cpu-bar
+    :interval "3s"
+    :initial "[░░░░░░░░░░]"
+    "./scripts/cpu.py bar"
+)
+
+(
+    defwidget cpu []
+    (
+        box
+        :class "widget"
+        :orientation "h"
+        :valign "start"
+        :halign "center"
+        (
+            label
+            :text "CPU LOAD"
+        )
+        (
+            label
+            :text cpu-bar
+        )
+        (
+            label
+            :text cpu-percentage
+        )
+    )
+)

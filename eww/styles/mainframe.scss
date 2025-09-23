@@ -1,0 +1,18 @@
+@import "./colors.scss";
+
+.delimiter,
+.workspace {
+  margin: 0;
+  padding: 0;
+}
+
+.mainframe-box {
+  min-width: 156px;
+}
+
+.mainframe-value {
+  border-color: $foreground;
+  border: 2px solid;
+  min-width: 96px;
+  padding: 12px;
+}

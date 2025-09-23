@@ -1,0 +1,36 @@
+(
+    defpoll disk-percentage
+    :interval "5s"
+    :initial "50.0"
+    "./scripts/disk.py percentage"
+)
+
+(
+    defpoll disk-bar
+    :interval "3s"
+    :initial "[░░░░░░░░░░]"
+    "./scripts/ram.py bar"
+)
+
+(
+    defwidget disk []
+    (
+        box
+        :class "widget"
+        :orientation "h"
+        :valign "start"
+        :halign "center"
+        (
+            label
+            :text "STORAGE"
+        )
+        (
+            label
+            :text disk-bar
+        )
+        (
+            label
+            :text disk-percentage
+        )
+    )
+)

@@ -1,0 +1,97 @@
+(
+    defpoll uptime
+    :interval "1s"
+    :initial "14 minutes"
+    "./scripts/battery.py uptime"
+)
+
+(
+    defpoll remaining
+    :interval "5s"
+    :initial "20 minutes"
+    "./scripts/battery.py remaining"
+)
+
+(
+    defpoll cpu-temperature
+    :interval "1.5s"
+    :initial "46.7°C"
+    "./scripts/temperature.py cpu"
+)
+
+(
+    defpoll nvme-temperature
+    :interval "3s"
+    :initial "48.85°C"
+    "./scripts/temperature.py nvme"
+)
+
+(
+    defpoll workspace
+    :interval "0.5s"
+    :initial "2"
+    "hyprctl activeworkspace -j | jq '.id'"
+)
+
+(
+    defwidget mainframe []
+    (
+        box
+        :class "widget"
+        :orientation "h"
+        :valign "start"
+        :halign "center"
+        :spacing 24
+        (
+            box
+            :class "mainframe-box"
+            :orientation "v"
+            :spacing 12
+            (
+                label
+                :class "mainframe-value"
+                :text uptime
+            )
+            (
+                label
+                :class "mainframe-value"
+                :text nvme-temperature
+            )
+        )
+        (
+            box
+            :class "mainframe-spacer"
+            (
+                label
+                :class "delimiter"
+                :text "["
+            )
+            (
+                label
+                :class "workspace"
+                :text workspace
+            )
+            (
+                label
+                :class "delimiter"
+                :text "]"
+            )
+        )
+        (
+            box
+            :class "mainframe-box"
+            :orientation "v"
+            :spacing 12
+            (
+                label
+                :class "mainframe-value"
+                :text remaining
+            )
+            (
+                label
+                :class "mainframe-value"
+                :text cpu-temperature
+            )
+        )
+    )
+)
