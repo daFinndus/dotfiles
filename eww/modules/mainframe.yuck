@@ -34,6 +34,85 @@
 )
 
 (
+    defwidget leftside []
+    (
+        box
+        :class "mainframe-box"
+        :orientation "v"
+        :spacing 12
+        (
+            box
+            :class "mainframe-value"
+            :orientation "v"
+            :spacing 0
+            (
+                label
+                :class "mainframe-label"
+                :text "[ UPTIME ]"
+            )
+            (
+                label
+                :text uptime
+            )
+        )
+        (
+            box
+            :class "mainframe-value"
+            :orientation "v"
+            :spacing 0
+            (
+                label
+                :class "mainframe-label"
+                :text "[ NVME TEMP ]"
+            )
+            (
+                label
+                :text nvme-temperature
+            )
+        )
+    )
+)
+
+(
+    defwidget rightside []
+    (
+        box
+        :class "mainframe-box"
+        :orientation "v"
+        :spacing 12
+        (
+            box
+            :class "mainframe-value"
+            :orientation "v"
+            :spacing 0
+            (
+                label
+                :class "mainframe-label"
+                :text "[ FLATLINE ]"
+            )
+            (
+                label
+                :text remaining
+            )
+        )
+        (
+            box
+            :class "mainframe-value"
+            :orientation "v"
+            (
+                label
+                :class "mainframe-label"
+                :text "[ CPU TEMP ]"
+            )
+            (
+                label
+                :text cpu-temperature
+            )
+        )
+    )
+)
+
+(
     defwidget mainframe []
     (
         box
@@ -41,26 +120,12 @@
         :orientation "h"
         :valign "start"
         :halign "center"
-        :spacing 24
-        (
-            box
-            :class "mainframe-box"
-            :orientation "v"
-            :spacing 12
-            (
-                label
-                :class "mainframe-value"
-                :text uptime
-            )
-            (
-                label
-                :class "mainframe-value"
-                :text nvme-temperature
-            )
-        )
+        :spacing 4
+        (leftside)
         (
             box
             :class "mainframe-spacer"
+            :spacing 0
             (
                 label
                 :class "delimiter"
@@ -77,21 +142,6 @@
                 :text "]"
             )
         )
-        (
-            box
-            :class "mainframe-box"
-            :orientation "v"
-            :spacing 12
-            (
-                label
-                :class "mainframe-value"
-                :text remaining
-            )
-            (
-                label
-                :class "mainframe-value"
-                :text cpu-temperature
-            )
-        )
+        (rightside)
     )
 )

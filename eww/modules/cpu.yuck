@@ -16,10 +16,11 @@
     defwidget cpu []
     (
         box
-        :class "widget"
+        :class "widget bar"
         :orientation "h"
         :valign "start"
         :halign "center"
+        :spacing 4
         (
             label
             :text "CPU LOAD"

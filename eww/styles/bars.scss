@@ -1,9 +1,8 @@
-.cava-box {
+@import "./colors.scss";
+
+.bar {
+  min-width: 324px;
   background: linear-gradient(0, $color4, $background);
   border: 3px solid $color4;
-  margin: 0 16px 16px 16px;
-}
-
-.cava-container {
-  margin: 0 16px 16px 0;
+  padding: 6px;
 }

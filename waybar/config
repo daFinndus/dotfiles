@@ -1,5 +1,5 @@
 {
-    "layer": "top",
+    "layer": "bottom",
     "position": "top", // Waybar position (top|bottom|left|right)
     "mod": "dock",
     "margin-top": 8,

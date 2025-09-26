@@ -18,6 +18,6 @@ def render_ascii_bar(percentage=0):
 
 if __name__ == "__main__":
     if sys.argv[1] == "percentage":
-        print(get_percentage())
+        print(f"{get_percentage()} %")
     elif sys.argv[1] == "bar":
         print(render_ascii_bar(get_percentage()))

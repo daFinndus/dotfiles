@@ -9,18 +9,22 @@
     defwidget cava [] 
     ( 
         box 
-        :class "cava-container" 
-        :orientation "h" 
-        :valign "end"
+        :class "cava-box" 
         (
-            for value in data 
+            box
+            :class "cava-container" 
+            :orientation "h" 
+            :valign "end"
             (
-                label
-                :angle 90
-                :xalign 1
-                :truncate-left true
-                :text value
-            ) 
+                for value in data 
+                (
+                    label
+                    :angle 90
+                    :xalign 1
+                    :truncate-left true
+                    :text value
+                ) 
+            )
         ) 
     ) 
 )

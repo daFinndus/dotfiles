@@ -5,6 +5,7 @@
   font-family: JetBrainsNF Mono;
   font-weight: bolder;
   font-size: 12px;
+  animation: color 2s ease-in;
 }
 
 /* Main status bar */
@@ -43,11 +44,6 @@ button {
   background-color: transparent;
 }
 
-button:hover {
-  color: @color4;
-  background-color: red;
-}
-
 /* Tooltips */
 tooltip {
   border: 2px solid @foreground;
@@ -65,6 +61,19 @@ tooltip decoration {
   background-color: transparent;
 }
 
+/* Prevent hover effects */
+button {
+    border: none;
+    border-radius: 0;
+
+}
+
+button:hover {
+    box-shadow: inherit;
+    text-shadow: inherit;
+    background: inherit;
+}
+
 /* Custom Modules with a ascii bar */
 #custom-battery,
 #custom-audio,
@@ -73,7 +82,6 @@ tooltip decoration {
 }
 
 /* Default modules */
-
 #network,
 #bluetooth,
 #pulseaudio {
@@ -89,8 +97,8 @@ tooltip decoration {
   margin: 16px;
 }
 
-#workspaces > *:hover {
-  background-color: transparent;
+#workspaces button:hover {
+  color: @color4;
 }
 
 /* Module bars */

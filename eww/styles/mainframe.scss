@@ -4,15 +4,26 @@
 .workspace {
   margin: 0;
   padding: 0;
+  min-width: 0;
+}
+
+.mainframe-spacer {
+  min-width: 0;
 }
 
 .mainframe-box {
-  min-width: 156px;
+  min-width: 0;
+}
+
+.mainframe-label {
+  font-size: 12px;
+  margin: 0;
+  padding: 0;
 }
 
 .mainframe-value {
-  border-color: $foreground;
-  border: 2px solid;
-  min-width: 96px;
-  padding: 12px;
+  min-width: 92px;
+  background: linear-gradient(0, $color4, $background);
+  border: 3px solid $color4;
+  padding: 6px;
 }

@@ -16,7 +16,7 @@
     defwidget ram []
     (
         box
-        :class "widget"
+        :class "bar widget"
         :orientation "h"
         :valign "start"
         :halign "center"

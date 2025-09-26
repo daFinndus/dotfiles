@@ -9,7 +9,7 @@ def get_uptime():
     current = time.time()
     boot = psutil.boot_time()
     
-    return f"{int(current - boot) // 60} minutes"
+    return f"{int(current - boot) // 60} mins"
 
 # Renders an ASCII bar representing the disk usage percentage
 def get_remaining():
@@ -21,7 +21,7 @@ def get_remaining():
         return "Error!"
     else:
         remaining = battery.secsleft // 60
-        return f"{remaining} minutes"
+        return f"{remaining} mins"
         
     
 

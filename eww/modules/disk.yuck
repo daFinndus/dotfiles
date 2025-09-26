@@ -9,14 +9,14 @@
     defpoll disk-bar
     :interval "3s"
     :initial "[░░░░░░░░░░]"
-    "./scripts/ram.py bar"
+    "./scripts/disk.py bar"
 )
 
 (
     defwidget disk []
     (
         box
-        :class "widget"
+        :class "widget bar"
         :orientation "h"
         :valign "start"
         :halign "center"

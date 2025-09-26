@@ -1,11 +1,12 @@
 @import "./styles/mainframe.scss";
 @import "./styles/colors.scss";
 @import "./styles/cava.scss";
+@import "./styles/bars.scss";
 
 * {
   all: unset;
-  font-family: "JetBrains Mono", monospace;
-  font-size: 16px;
+  font-family: "JetBrainsNF Mono", monospace;
+  font-size: 14px;
   font-weight: bold;
   color: $foreground;
 }

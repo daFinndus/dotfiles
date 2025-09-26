@@ -5,7 +5,7 @@ import psutil
 
 # Returns the current disk usage percentage
 def get_percentage():
-    disk = psutil.disk_usage("/")
+    disk = psutil.disk_usage("/home")
     
     total = disk.total
     used = disk.used
@@ -23,6 +23,6 @@ def render_ascii_bar(percentage=0):
 
 if __name__ == "__main__":
     if sys.argv[1] == "percentage":
-        print(get_percentage())
+       print(f"{get_percentage()} %")
     elif sys.argv[1] == "bar":
         print(render_ascii_bar(get_percentage()))
