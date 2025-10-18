@@ -1,7 +1,9 @@
-(include "modules/cava.yuck")
+(include "modules/audio.yuck")
+(include "modules/brightness.yuck")
 (include "modules/clock.yuck")
 (include "modules/cpu.yuck")
 (include "modules/disk.yuck")
+(include "modules/fans.yuck")
 (include "modules/mainframe.yuck")
 (include "modules/ram.yuck")
 
@@ -21,12 +23,17 @@
             box
             :class "window"
             :orientation "v"
+            :valign "center"
+            :halign "start"
             :spacing 0
+            :space-evenly false
             (clock)
             (mainframe)
+            (fans)
             (cpu)
             (ram)
             (disk)
-            (cava)
+            (audio)
+            (brightness)
         )
 )

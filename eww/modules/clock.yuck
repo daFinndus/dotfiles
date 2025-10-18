@@ -8,8 +8,10 @@
     defwidget clock []
     (
         box
-        :class "widget"
+        :class "clock bar"
+        :orientation "h"
         :valign "start"
+        :halign "center"
         (
             label
             :text time

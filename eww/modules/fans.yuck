@@ -1,0 +1,64 @@
+(
+    defpoll fan1-data
+    :interval "500ms"
+    :initial "{}"
+    "./scripts/fans.sh 1 json"
+)
+
+(
+    defpoll fan2-data
+    :interval "500ms"
+    :initial "{}"
+    "./scripts/fans.sh 2 json"
+)
+
+(
+    defwidget fans []
+    (
+        box
+        :orientation "v"
+        :valign "start"
+        :halign "center"
+        :spacing 4
+        (
+            box
+            :class "bar"
+            :orientation "h"
+            :valign "start"
+            :halign "center"
+            :spacing 4
+            (
+                label
+                :text "FAN 1"
+            )
+            (
+                label
+                :text "${fan1-data.rpm ?: '0 RPM'}"
+            )
+            (
+                label
+                :text "${fan1-data.spinner ?: '[ - ]'}"
+            )
+        )
+        (
+            box
+            :class "bar"
+            :orientation "h"
+            :valign "start"
+            :halign "center"
+            :spacing 4
+            (
+                label
+                :text "FAN 2"
+            )
+            (
+                label
+                :text "${fan2-data.rpm ?: '0 RPM'}"
+            )
+            (
+                label
+                :text "${fan2-data.spinner ?: '[ - ]'}"
+            )
+        )
+    )
+)

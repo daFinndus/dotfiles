@@ -37,6 +37,18 @@ def calculate_time_left(time=60, charging=False):
         h, m = divmod(m, 60)
         return(f"{h:02d}h {m:02d}m remaining")    
 
+def get_class(percentage=0, charging=False):
+    if charging:
+        return "charging"
+    elif percentage == 0:
+        return "critical"
+    elif percentage <= 15:
+        return "warning"
+    elif percentage > 15 and percentage <= 30:
+        return "bad"
+    else:
+        return "good"
+
 if __name__ == "__main__":
     battery = psutil.sensors_battery()
     
@@ -49,10 +61,12 @@ if __name__ == "__main__":
     
     text = f"{icon}  {bar}  {percentage}%"
     tooltip = f"{calculate_time_left(seconds, charging)}"
+
+    css = get_class(percentage, charging)
     
     print(json.dumps({
         "text": text,
         "tooltip": tooltip,
-        "class": "custom-battery"
+        "class": css,
     })) 
     

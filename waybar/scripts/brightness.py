@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python
 
 import json
 import time
@@ -34,6 +34,16 @@ def calculate_icon(percentage=0):
     else:
         return ""
 
+def get_class(percentage=0):
+    if percentage == 0:
+        return "critical"
+    elif percentage <= 15:
+        return "warning"
+    elif percentage > 15 and percentage <= 30:
+        return "bad"
+    else:
+        return "good"
+
 def main():
     while True:
         percentage = get_brightness()
@@ -42,10 +52,12 @@ def main():
 
         text = f"{icon}  {bar}  {percentage}%"
 
+        css = get_class(percentage)
+
         print(json.dumps({
             "text": text,
             "tooltip": f"Brightness: {percentage}%",
-            "class": "custom-brightness"
+            "class": css,
         }), flush=True)
 
         time.sleep(0.1)

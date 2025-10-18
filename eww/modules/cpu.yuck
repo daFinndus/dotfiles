@@ -1,22 +1,15 @@
 (
-    defpoll cpu-percentage
-    :interval "1.5s"
-    :initial "4.0"
-    "./scripts/cpu.py percentage"
-)
-
-(
-    defpoll cpu-bar
-    :interval "3s"
-    :initial "[░░░░░░░░░░]"
-    "./scripts/cpu.py bar"
+    defpoll cpu-data
+    :interval "2s"
+    :initial "{}"
+    "./scripts/cpu.py json"
 )
 
 (
     defwidget cpu []
     (
         box
-        :class "widget bar"
+        :class "bar"
         :orientation "h"
         :valign "start"
         :halign "center"
@@ -27,11 +20,11 @@
         )
         (
             label
-            :text cpu-bar
+            :text "${cpu-data.bar ?: '[░░░░░░░░░░]'}"
         )
         (
             label
-            :text cpu-percentage
+            :text "${cpu-data.percentage ?: '0 %'}"
         )
     )
 )

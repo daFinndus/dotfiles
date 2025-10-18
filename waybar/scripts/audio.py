@@ -51,6 +51,16 @@ def get_audiosystem():
     
     return decoded
 
+def get_class(percentage=0, muted=False):
+    if percentage == 0 or muted:
+        return "critical"
+    elif percentage <= 15:
+        return "warning"
+    elif percentage > 15 and percentage <= 30:
+        return "bad"
+    else:
+        return "good"
+
 def main():
     while True:
         percentage = get_volume_percentage()
@@ -62,10 +72,12 @@ def main():
         text = f"{icon}  {bar}  {percentage}%"
         tooltip = get_audiosystem()
 
+        css = get_class(percentage, muted)
+
         print(json.dumps({
             "text": text,
             "tooltip": tooltip,
-            "class": "custom-audio"
+            "class": css,
         }), flush=True)
 
         sleep(0.1)

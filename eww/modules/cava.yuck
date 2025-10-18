@@ -1,6 +1,6 @@
 ( 
     deflisten data 
-    :interval "100ms" 
+    :interval "150ms" 
     :initial "[]" 
     "./scripts/cava.sh"
 )
@@ -9,7 +9,9 @@
     defwidget cava [] 
     ( 
         box 
-        :class "cava-box" 
+        :class "cava-box"
+        :orientation "h"
+        :valign "end"
         (
             box
             :class "cava-container" 
@@ -20,8 +22,6 @@
                 (
                     label
                     :angle 90
-                    :xalign 1
-                    :truncate-left true
                     :text value
                 ) 
             )

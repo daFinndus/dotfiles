@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 handle() {
   STATE=$(hyprctl activeworkspace -j)

@@ -30,12 +30,6 @@ window#waybar {
   min-width: 12px;
 }
 
-/* States */
-.muted { color: @muted; }
-.warning { color: @warning; }
-.critical { color: @critical; }
-.charging { color: @charging; }
-
 /* Buttons */
 button {
   border-radius: 8px;
@@ -79,6 +73,28 @@ button:hover {
 #custom-audio,
 #custom-brightness {
   min-width: 152px;
+}
+
+#custom-battery.charging {
+  color: @color14;
+}
+
+#custom-battery.critical,
+#custom-audio.critical,
+#custom-brightness.critical  {
+  color: @color3;
+}
+
+#custom-battery.warning,
+#custom-audio.warning,
+#custom-brightness.warning  {
+  color: @color13;
+}
+
+#custom-battery.bad,
+#custom-audio.bad,
+#custom-brightness.bad {
+  color: @color5;
 }
 
 /* Default modules */

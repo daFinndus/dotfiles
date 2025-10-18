@@ -17,7 +17,15 @@ def render_ascii_bar(percentage=0):
     return "[" + "█" * filled_blocks + "░" * empty_blocks + "]"
 
 if __name__ == "__main__":
+    if len(sys.argv) < 2:
+        sys.exit(1)
+        
     if sys.argv[1] == "percentage":
         print(f"{get_percentage()} %")
     elif sys.argv[1] == "bar":
         print(render_ascii_bar(get_percentage()))
+    elif sys.argv[1] == "json":
+        import json
+        percentage = get_percentage()
+        bar = render_ascii_bar(percentage)
+        print(json.dumps({"bar": bar, "percentage": f"{percentage} %"}))

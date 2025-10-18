@@ -1,12 +1,12 @@
 (
-    defpoll disk-data
-    :interval "5s"
+    defpoll audio-data
+    :interval "200ms"
     :initial "{}"
-    "./scripts/disk.py json"
+    "./scripts/audio.py json"
 )
 
 (
-    defwidget disk []
+    defwidget audio []
     (
         box
         :class "bar"
@@ -16,15 +16,15 @@
         :spacing 4
         (
             label
-            :text "STORAGE"
+            :text "AUDIO"
         )
         (
             label
-            :text "${disk-data.bar ?: '[░░░░░░░░░░]'}"
+            :text "${audio-data.bar ?: '[░░░░░░░░░░]'}"
         )
         (
             label
-            :text "${disk-data.percentage ?: '0 %'}"
+            :text "${audio-data.percentage ?: '0 %'}"
         )
     )
 )

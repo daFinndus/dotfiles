@@ -1,0 +1,30 @@
+(
+    defpoll brightness-data
+    :interval "500ms"
+    :initial "{}"
+    "./scripts/brightness.py json"
+)
+
+(
+    defwidget brightness []
+    (
+        box
+        :class "bar"
+        :orientation "h"
+        :valign "start"
+        :halign "center"
+        :spacing 4
+        (
+            label
+            :text "BRIGHTNESS"
+        )
+        (
+            label
+            :text "${brightness-data.bar ?: '[░░░░░░░░░░]'}"
+        )
+        (
+            label
+            :text "${brightness-data.percentage ?: '0 %'}"
+        )
+    )
+)
