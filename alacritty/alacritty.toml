@@ -2,7 +2,7 @@
 decorations = "full"
 dynamic_title = false
 dynamic_padding = false
-opacity = 0.975
+opacity = 0.9
 title = "Alacritty"
 blur = true
 

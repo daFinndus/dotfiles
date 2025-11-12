@@ -5,6 +5,7 @@
     "color": {
       "1": "white"
     },
+    "source": "$HOME/.config/fastfetch/lucy.txt"  
   },
   "display": {
     "separator": ": ",     // Separator between keys and values

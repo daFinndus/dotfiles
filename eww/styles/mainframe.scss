@@ -1,16 +1,12 @@
 @import "./colors.scss";
 
-.delimiter,
-.workspace {
-  margin: 0;
-  padding: 0;
-  min-width: 0;
+.mainframe-widget {
+  margin: 16px;
+  padding: 8px 12px;
 }
 
 .mainframe-label {
   font-size: 12px;
-  margin: 0;
-  padding: 0;
 }
 
 .mainframe-value {

@@ -33,11 +33,42 @@
     "hyprctl activeworkspace -j | jq '.id'"
 )
 
+
+(
+    defwidget mainframe []
+    (
+        box
+        :class "mainframe-widget"
+        :orientation "h"
+        :valign "start"
+        :halign "center"
+        :spacing 6
+        (leftside)
+        (
+            box
+            :spacing 0
+            (
+                label
+                :text "["
+            )
+            (
+                label
+                :class "workspace"
+                :text workspace
+            )
+            (
+                label
+                :text "]"
+            )
+        )
+        (rightside)
+    )
+)
+
 (
     defwidget leftside []
     (
         box
-        :class "mainframe-box"
         :orientation "v"
         :spacing 12
         (
@@ -77,7 +108,6 @@
     defwidget rightside []
     (
         box
-        :class "mainframe-box"
         :orientation "v"
         :spacing 12
         (
@@ -109,39 +139,5 @@
                 :text cpu-temperature
             )
         )
-    )
-)
-
-(
-    defwidget mainframe []
-    (
-        box
-        :class "widget"
-        :orientation "h"
-        :valign "start"
-        :halign "center"
-        :spacing 4
-        (leftside)
-        (
-            box
-            :class "mainframe-spacer"
-            :spacing 0
-            (
-                label
-                :class "delimiter"
-                :text "["
-            )
-            (
-                label
-                :class "workspace"
-                :text workspace
-            )
-            (
-                label
-                :class "delimiter"
-                :text "]"
-            )
-        )
-        (rightside)
     )
 )

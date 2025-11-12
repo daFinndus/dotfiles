@@ -3,7 +3,7 @@
 SMM='/dell_smm-virtual-0/,/^$/'
 
 # Spinner frames
-FRAMES=('/' '—' '\' '|')
+FRAMES=('/' '—' "\\" '|')
 
 # Get fan RPM
 get_rpm() {

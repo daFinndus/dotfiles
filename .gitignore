@@ -3,12 +3,15 @@
 
 # Allow
 !/.gitignore
+!/rmshit.py
+!/rmshit.yaml
 
 !/alacritty
-!/cava
 !/eww
 !/fastfetch
+!/flameshot
 !/wal
 !/hypr
 !/waybar
 !/rofi
+!/kitty

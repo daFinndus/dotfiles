@@ -6,10 +6,20 @@
 )
 
 (
+    deflisten fan1-spinner
+    "./scripts/fans.sh 1 fan"
+)
+
+(
     defpoll fan2-data
     :interval "500ms"
     :initial "{}"
     "./scripts/fans.sh 2 json"
+)
+
+(
+    defpoll fan2-spinner
+    "./scripts/fans.sh 2 fan"
 )
 
 (
@@ -37,7 +47,7 @@
             )
             (
                 label
-                :text "${fan1-data.spinner ?: '[ - ]'}"
+                :text "${fan1-spinner ?: '[ - ]'}"
             )
         )
         (
@@ -57,7 +67,7 @@
             )
             (
                 label
-                :text "${fan2-data.spinner ?: '[ - ]'}"
+                :text "${fan2-spinner ?: '[ - ]'}"
             )
         )
     )
