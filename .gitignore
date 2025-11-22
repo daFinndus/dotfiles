@@ -5,15 +5,15 @@
 !/.gitignore
 !/.zshrc
 
-!/.config/rmshit.py
-!/.config/rmshit.yaml
+!.config/rmshit.py
+!.config/rmshit.yaml
 
-!/.config/alacritty
-!/.config/eww
-!/.config/fastfetch
-!/.config/flameshot
-!/.config/wal
-!/.config/hypr
-!/.config/waybar
-!/.config/rofi
-!/.config/kitty
+!.config/alacritty
+!.config/eww
+!.config/fastfetch
+!.config/flameshot
+!.config/wal
+!.config/hypr
+!.config/waybar
+!.config/rofi
+!.config/kitty
