@@ -3,15 +3,17 @@
 
 # Allow
 !/.gitignore
-!/rmshit.py
-!/rmshit.yaml
+!/.zshrc
 
-!/alacritty
-!/eww
-!/fastfetch
-!/flameshot
-!/wal
-!/hypr
-!/waybar
-!/rofi
-!/kitty
+!/.config/rmshit.py
+!/.config/rmshit.yaml
+
+!/.config/alacritty
+!/.config/eww
+!/.config/fastfetch
+!/.config/flameshot
+!/.config/wal
+!/.config/hypr
+!/.config/waybar
+!/.config/rofi
+!/.config/kitty
