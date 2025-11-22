@@ -1,0 +1,92 @@
+{
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+  "logo": {
+    "type": "auto",
+    "color": {
+      "1": "white"
+    },
+    "source": "$HOME/.config/fastfetch/lucy.txt"  
+  },
+  "display": {
+    "separator": ": ",     // Separator between keys and values
+    "color": {
+        "keys": "red",    // Key color
+        "title": "white"     // Title color
+    },
+    "key": {
+      "width": 16,
+      "type": "string"
+    }
+  },
+  "modules": [
+    "title",
+    "break",
+    {
+      "type": "board",
+      "key": "Mainboard"
+    },
+    "break",
+    {
+      "type": "cpu",
+      "format": "{name} @ {freq-base}"
+    },
+    {
+      "type": "gpu",
+      "format": "{name}"
+    },
+    "break",
+    {
+      "type": "disk",
+      "format": "{size-used} of {size-total}"
+    },
+    {
+      "type": "memory",
+      "format": "{percentage-bar} {used} / {total}",
+      "key": "Memory",
+      "percent": {
+          "type": 3,     
+          "green": 30,   
+          "yellow": 70 
+      }
+    },
+    "break",
+    {
+      "type": "os",
+      "format": "{pretty-name}"
+    },
+    {
+      "type": "kernel",
+      "format": "{sysname} - {release}"
+    },
+    "de",
+    {
+      "type": "shell",
+      "format": "{pretty-name} running from {exe-path}"
+    },
+    {
+      "type": "terminal",
+      "format": "{pretty-name}"
+    },
+    "break",
+    {
+      "type": "packages",
+      "format": "{pacman} installed packages with Pacman"
+    },
+    "uptime",
+    "break",
+    "dns",
+    {
+      "type": "localip",
+      "key": "Local IP",
+      "format": "{ipv4}"
+    },
+    {
+      "type": "publicip",
+      "format": "{ip}"
+    },
+    {
+      "type": "version",
+      "format": "Fastfetch running on {version}"
+    }
+  ]
+}

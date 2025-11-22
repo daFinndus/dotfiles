@@ -1,10 +1,17 @@
 # Ignore
 /*
 
-# Allow
+# Allow specific files
 !/.gitignore
 !/.zshrc
 
+# Allow config files
+!/.config/
+
+# Ignore everything in config
+/.config/*
+
+# Except these
 !.config/rmshit.py
 !.config/rmshit.yaml
 
