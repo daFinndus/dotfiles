@@ -22,6 +22,7 @@
 !.config/flameshot
 !.config/wal
 !.config/hypr
+!.config/mako
 !.config/waybar
 !.config/rofi
 !.config/kitty
