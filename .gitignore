@@ -1,0 +1,18 @@
+# Ignore everything by default
+*
+
+# Whitelist what you want
+!.gitignore
+!./scripts/*
+
+!README.md
+
+# Whitelist host directories
+!afterlife/
+!afterlife/**
+
+!kabuki/
+!kabuki/**
+
+!shared/
+!shared/**
