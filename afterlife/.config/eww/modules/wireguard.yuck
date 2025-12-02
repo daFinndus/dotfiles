@@ -1,0 +1,16 @@
+(
+    defwidget wireguard []
+    (
+        box
+        :class "bar"
+        :orientation "h"
+        :valign "start"
+        :halign "center"
+        :spacing 8
+        (
+            button
+            :onclick "sudo wireguard"
+            "VPN"
+        )
+    )
+)

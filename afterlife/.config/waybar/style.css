@@ -1,0 +1,129 @@
+@import "colors.css";
+
+* {
+  font-family: JetBrainsNF Mono;
+  font-weight: bolder;
+  font-size: 12px;
+  animation: color 2s ease-in;
+}
+
+/* Main status bar */
+window#waybar {
+  color: @foreground;
+  background-color: transparent;
+  border-radius: 8px;
+}
+
+/* Hoverables */
+#clock:hover,
+#network:hover,
+#bluetooth:hover,
+#custom-battery:hover,
+#custom-brightness:hover,
+#custom-audio:hover {
+  color: @color4;
+}
+
+/* Spacer */
+#custom-spacer {
+  min-width: 12px;
+}
+
+/* Buttons */
+button {
+  border-radius: 8px;
+  min-width: 36px;
+  color: @foreground;
+  background-color: transparent;
+}
+
+/* Tooltips */
+tooltip {
+  border: 2px solid @foreground;
+  border-radius: 10px;
+  background-color: @background;
+}
+
+tooltip label {
+  margin: 2px 4px;
+  font-weight: normal;
+}
+
+tooltip decoration {
+  border: none;
+  background-color: transparent;
+}
+
+/* Prevent hover effects */
+button {
+  border: none;
+  border-radius: 0;
+}
+
+button:hover {
+  box-shadow: inherit;
+  text-shadow: inherit;
+  background: inherit;
+}
+
+/* Custom Modules with a ascii bar */
+#custom-battery,
+#custom-audio,
+#custom-brightness {
+  min-width: 152px;
+}
+
+#custom-battery.charging {
+  color: @color14;
+}
+
+#custom-battery.critical,
+#custom-audio.critical,
+#custom-brightness.critical {
+  color: @color3;
+}
+
+#custom-battery.warning,
+#custom-audio.warning,
+#custom-brightness.warning {
+  color: @color13;
+}
+
+#custom-battery.bad,
+#custom-audio.bad,
+#custom-brightness.bad {
+  color: @color5;
+}
+
+/* Default modules */
+#network,
+#bluetooth,
+#pulseaudio {
+  min-width: 24px;
+}
+
+#clock {
+  min-width: 64px;
+  margin: 16px;
+}
+
+#tray {
+  margin: 16px;
+}
+
+#workspaces button:hover {
+  color: @color4;
+}
+
+/* Module bars */
+.modules-left,
+.modules-center,
+.modules-right {
+  background-color: @background;
+  border-radius: 8px;
+}
+
+.modules-left,
+.modules-right {
+  min-width: 724px;
+}

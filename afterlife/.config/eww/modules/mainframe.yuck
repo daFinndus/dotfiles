@@ -1,0 +1,143 @@
+(
+    defpoll uptime
+    :interval "1s"
+    :initial "14 minutes"
+    "./scripts/battery.py uptime"
+)
+
+(
+    defpoll remaining
+    :interval "5s"
+    :initial "20 minutes"
+    "./scripts/battery.py remaining"
+)
+
+(
+    defpoll cpu-temperature
+    :interval "1.5s"
+    :initial "46.7°C"
+    "./scripts/temperature.py cpu"
+)
+
+(
+    defpoll nvme-temperature
+    :interval "3s"
+    :initial "48.85°C"
+    "./scripts/temperature.py nvme"
+)
+
+(
+    defpoll workspace
+    :interval "0.5s"
+    :initial "2"
+    "hyprctl activeworkspace -j | jq '.id'"
+)
+
+
+(
+    defwidget mainframe []
+    (
+        box
+        :class "mainframe-widget"
+        :orientation "h"
+        :valign "start"
+        :halign "center"
+        :spacing 6
+        (leftside)
+        (
+            box
+            :spacing 0
+            (
+                label
+                :text "["
+            )
+            (
+                label
+                :class "workspace"
+                :text workspace
+            )
+            (
+                label
+                :text "]"
+            )
+        )
+        (rightside)
+    )
+)
+
+(
+    defwidget leftside []
+    (
+        box
+        :orientation "v"
+        :spacing 12
+        (
+            box
+            :class "mainframe-value"
+            :orientation "v"
+            :spacing 0
+            (
+                label
+                :class "mainframe-label"
+                :text "[ UPTIME ]"
+            )
+            (
+                label
+                :text uptime
+            )
+        )
+        (
+            box
+            :class "mainframe-value"
+            :orientation "v"
+            :spacing 0
+            (
+                label
+                :class "mainframe-label"
+                :text "[ NVME TEMP ]"
+            )
+            (
+                label
+                :text nvme-temperature
+            )
+        )
+    )
+)
+
+(
+    defwidget rightside []
+    (
+        box
+        :orientation "v"
+        :spacing 12
+        (
+            box
+            :class "mainframe-value"
+            :orientation "v"
+            :spacing 0
+            (
+                label
+                :class "mainframe-label"
+                :text "[ FLATLINE ]"
+            )
+            (
+                label
+                :text remaining
+            )
+        )
+        (
+            box
+            :class "mainframe-value"
+            :orientation "v"
+            (
+                label
+                :class "mainframe-label"
+                :text "[ CPU TEMP ]"
+            )
+            (
+                label
+                :text cpu-temperature
+            )
+        )
+    )
+)

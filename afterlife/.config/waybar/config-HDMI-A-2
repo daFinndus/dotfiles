@@ -1,0 +1,30 @@
+{
+    "output": "HDMI-A-2",
+    "layer": "bottom",
+    "position": "top", // Waybar position (top|bottom|left|right)
+    "mod": "dock",
+    "margin-top": 8,
+    "margin-right": 8,
+    "margin-bottom": 0,
+    "margin-left": 8,
+    "spacing": 8, // Gaps between modules (4px)
+    "exclusive": true,
+    "passthrough": false,
+    "gtk-layer-shell": true,
+    // Load Modules
+    "include": ["/home/finn/.config/waybar/modules.json"],
+    "modules-left": [
+        "custom/spacer",
+        "custom/audio",
+        "network",
+        "bluetooth",
+        "pulseaudio"
+    ],
+    "modules-center": [
+        "clock"
+    ],
+    "modules-right": [
+        "tray",
+        "hyprland/workspaces",
+    ],
+}

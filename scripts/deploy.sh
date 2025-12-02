@@ -37,11 +37,11 @@ hostname() {
   fi
 }
 
-validate-directory() {
+validate_directory() {
   checking=$1
 
   if [ ! -d "$checking" ]; then
-    error "$checking was not found!"
+    log "$checking was not found!"
     mkdir "$checking"
     log "Created $checking, proceeding..."
   else
@@ -50,14 +50,16 @@ validate-directory() {
 }
 
 # This function will link everything
-create-link() {
+create_link() {
   target=$1
   option=$2
 
-  if [ -f "$HOME/$target" ] || [ -d "$HOME/$target" ]; then
+  if [ -e "$HOME/$target" ] || [ -L "$HOME/$target" ]; then
     log "$target already exists, skipping..."
   else
     log "$target does not exist, proceeding..."
+
+    mkdir -p "$(dirname "$HOME/$target")"
 
     if [ "$option" == "HOST" ]; then
       ln -s "$HOSTDIR/$target" "$HOME/$target"
@@ -74,28 +76,43 @@ main() {
 
   hostname
 
-  validate-directory $SHARED
-  validate-directory $HOSTDIR
+  validate_directory $SHARED
+  validate_directory $HOSTDIR
 
   log "Going to create symbolic links..."
 
-  # Test it out ony fastfetch only
-  get-directories $SHARED
-  get-directories $HOSTDIR
+  # Create links for eww
+  create_link ".config/eww" HOST
 
-  #create-link ".config/eww"
-  create-link ".config/fastfetch" SHARED
-  #create-link ".config/flameshot"
-  #create-link ".config/hypr"
-  #create-link ".config/kitty"
-  #create-link ".config/mako"
-  #create-link ".config/nvim"
-  create-link ".config/rmshit.py" SHARED
-  create-link ".config/rmshit.yaml" SHARED
-  #create-link ".config/rofi"
-  #create-link ".config/systemd/user/statusbar.service"
-  #create-link ".config/wal"
-  #create-link ".config/waybar"
+  # Create links for hyprland
+  create_link ".config/hypr/hyprland.conf" SHARED
+  create_link ".config/hypr/hyprlock.conf" SHARED
+  create_link ".config/hypr/hyprpaper.conf" SHARED
+  create_link ".config/hypr/scripts" SHARED
+
+  create_link ".config/hypr/autostart.conf" HOST
+  create_link ".config/hypr/binds.conf" HOST
+  create_link ".config/hypr/input.conf" HOST
+  create_link ".config/hypr/monitors.conf" HOST
+  create_link ".config/hypr/variables.conf" HOST
+  create_link ".config/hypr/windowrules.conf" HOST
+
+  # Create links for waybar
+  create_link ".config/waybar" HOST
+
+  # Create links for small apps
+  create_link ".config/systemd/user/statusbar.service" SHARED
+  create_link ".config/systemd/user/wallpaper.service" SHARED
+
+  create_link ".config/fastfetch" SHARED
+  create_link ".config/rmshit.py" SHARED
+  create_link ".config/rmshit.yaml" SHARED
+  create_link ".config/flameshot" SHARED
+  create_link ".config/kitty" SHARED
+  create_link ".config/mako" SHARED
+  create_link ".config/nvim" SHARED
+  create_link ".config/rofi" SHARED
+  create_link ".config/wal" SHARED
 }
 
 main

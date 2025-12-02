@@ -1,0 +1,19 @@
+@import "~/.config/rofi/colors.rasi"
+
+window {
+	border: 2px;
+	border-color: @normal-foreground; 
+	border-radius: 4px;
+}
+
+inputbar {
+	margin: 0 0 0.5em 0;
+}
+
+element {
+	padding: 8px;
+}
+
+element selected {
+	border-radius: 4px;
+}
