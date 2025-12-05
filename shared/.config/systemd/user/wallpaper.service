@@ -7,7 +7,6 @@ Wants=graphical-session.target
 Type=oneshot
 ExecStart=/home/finn/.config/hypr/scripts/wallpaper.sh
 Restart=no
-Environment=DISPLAY=:0
 Environment=XDG_RUNTIME_DIR=/run/user/%U
 
 [Install]

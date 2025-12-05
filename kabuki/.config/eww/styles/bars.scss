@@ -1,0 +1,21 @@
+@import "./colors.scss";
+
+.bar {
+  min-width: 324px;
+  background: linear-gradient(0, $color4, $background);
+  border: 3px solid $color4;
+  padding: 6px;
+  margin: 8px 0;
+}
+
+.power {
+  min-width: 90px;
+  background: linear-gradient(0, $color4, $background);
+  border: 3px solid $color4;
+  padding: 6px;
+  margin: 8px 0;
+}
+
+.clock {
+  margin: 24px 0 0 0;
+}
