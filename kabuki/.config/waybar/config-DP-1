@@ -15,10 +15,12 @@
     "include": ["/home/finn/.config/waybar/modules.json"],
     "modules-left": [
         "custom/spacer",
+        "custom/battery",
         "custom/audio",
+        "custom/brightness",
         "network",
         "bluetooth",
-        "pulseaudio"
+        "pulseaudio",
     ],
     "modules-center": [
         "clock"
