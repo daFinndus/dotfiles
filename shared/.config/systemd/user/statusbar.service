@@ -3,10 +3,11 @@ Description=Dynamic bar toggle based on Hyprland events
 After=graphical-session.target
 
 [Service]
-ExecStartPre=/bin/sleep 7
+ExecStartPre=/bin/sleep 5
 ExecStart=/home/finn/.config/hypr/scripts/statusbar.sh
 Restart=always
 RestartSec=1
+Environment=XDG_RUNTIME_DIR=%t
 
 [Install]
 WantedBy=default.target
