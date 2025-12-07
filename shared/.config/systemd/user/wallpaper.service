@@ -1,14 +1,10 @@
 [Unit]
-Description=Set Hyprland wallpaper after login
+Description=Set hyprpaper wallpaper after login
 After=graphical-session.target
-Wants=graphical-session.target
 
 [Service]
 Type=oneshot
 ExecStart=/home/finn/.config/hypr/scripts/wallpaper.sh
-Restart=no
-Environment=DISPLAY=:0
-Environment=XDG_RUNTIME_DIR=/run/user/%U
 
 [Install]
-WantedBy=default.target
+WantedBy=graphical-session.target
