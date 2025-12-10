@@ -1,5 +1,5 @@
 {
-    "output": "DP-5",
+    "output": "DP-2",
     "layer": "bottom",
     "position": "top", // Waybar position (top|bottom|left|right)
     "mod": "dock",
