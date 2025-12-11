@@ -102,7 +102,6 @@ main() {
 
   # Create links for small apps
   create_link ".config/systemd/user/statusbar.service" SHARED
-  create_link ".config/systemd/user/wallpaper.service" SHARED
 
   create_link ".config/btop" SHARED
   create_link ".config/fastfetch" SHARED
