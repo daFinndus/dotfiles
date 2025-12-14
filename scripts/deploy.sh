@@ -5,6 +5,8 @@ set -u # Exit on undefined variable
 
 HOSTNAME=$(cat /etc/hostname)
 
+THEMES="/usr/share/icons"
+
 DIRECTORY="$HOME/Dotfiles"
 SHARED="$DIRECTORY/shared"
 HOSTDIR="$DIRECTORY/$HOSTNAME"
@@ -71,6 +73,17 @@ create_link() {
   fi
 }
 
+link_themes() {
+  if [ -e "$THEMES" ] || [ -L "$THEMES " ]; then
+    log "$THEMES already exists, skipping..."
+  else
+    log "$THEMES does not exist, proceeding..."
+    sudo ln -s "$DIRECTORY/icons" "$THEMES"
+
+    log "Successfully created symbolic link to $THEMES"
+  fi
+}
+
 main() {
   log "Deploying dotfiles for $HOSTNAME in $DIRECTORY"
 
@@ -113,6 +126,11 @@ main() {
   create_link ".config/nvim" SHARED
   create_link ".config/rofi" SHARED
   create_link ".config/wal" SHARED
+
+  # This one is kinda special, requires sudo, for THEMES
+  link_themes
+
+  log "Everything done!"
 }
 
 main
