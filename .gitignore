@@ -15,6 +15,9 @@
 !shared/
 !shared/**
 
+!icons/
+!icons/**
+
 # This is currently annoying
 shared/.config/hypr/scripts/wallpaper
 
