@@ -128,7 +128,7 @@ main() {
   create_link ".config/wal" SHARED
 
   # This one is kinda special, requires sudo, for THEMES
-  link_themes
+  # link_themes
 
   log "Everything done!"
 }
