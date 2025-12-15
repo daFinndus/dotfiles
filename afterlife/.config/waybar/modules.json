@@ -9,6 +9,7 @@
     "on-scroll-down": "pamixer --increase 1",
     "on-scroll-up": "pamixer --decrease 1",
     "on-click": "pamixer --toggle-mute",
+    "on-click-middle": "systemctl --user restart banana.service",
     "on-click-right": "kitty --title alsamixer --class kitty -e alsamixer"
   },
   "network": {
