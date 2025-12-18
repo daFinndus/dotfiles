@@ -109,6 +109,7 @@ main() {
   create_link ".config/hypr/monitors.conf" HOST
   create_link ".config/hypr/variables.conf" HOST
   create_link ".config/hypr/windowrules.conf" HOST
+  create_link ".config/hypr/workspacerules.conf" HOST
 
   # Create links for waybar
   create_link ".config/waybar" HOST
