@@ -1,25 +1,13 @@
 (
-    defpoll fan1-data
+    defpoll fan-rpm
     :interval "1s"
     :initial "{}"
-    "./../scripts/fans.sh 1 json"
+    "./../scripts/fans.sh rpm"
 )
 
 (
-    deflisten fan1-spinner
-    "./../scripts/fans.sh 1 fan"
-)
-
-(
-    defpoll fan2-data
-    :interval "1s"
-    :initial "{}"
-    "./../scripts/fans.sh 2 json"
-)
-
-(
-    deflisten fan2-spinner
-    "./../scripts/fans.sh 2 fan"
+    deflisten fan-spinner
+    "./../scripts/fans.sh fan"
 )
 
 (
@@ -39,35 +27,15 @@
             :spacing 4
             (
                 label
-                :text "FAN 1"
+                :text "FAN"
             )
             (
                 label
-                :text "${fan1-data.rpm ?: '0 RPM'}"
+                :text "${fan-rpm ?: '0 RPM'}"
             )
             (
                 label
-                :text "${fan1-spinner ?: '[ - ]'}"
-            )
-        )
-        (
-            box
-            :class "bar"
-            :orientation "h"
-            :valign "start"
-            :halign "center"
-            :spacing 4
-            (
-                label
-                :text "FAN 2"
-            )
-            (
-                label
-                :text "${fan2-data.rpm ?: '0 RPM'}"
-            )
-            (
-                label
-                :text "${fan2-spinner ?: '[ - ]'}"
+                :text "${fan-spinner ?: '[ - ]'}"
             )
         )
     )

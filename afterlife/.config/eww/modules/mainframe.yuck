@@ -2,14 +2,14 @@
     defpoll uptime
     :interval "1s"
     :initial "14 minutes"
-    "./../scripts/battery.py uptime"
+    "./../scripts/battery.py"
 )
 
 (
-    defpoll remaining
+    defpoll loadavg
     :interval "5s"
-    :initial "20 minutes"
-    "./../scripts/battery.py remaining"
+    :initial "7.99 (100%)"
+    "./../scripts/loadavg.sh"
 )
 
 (
@@ -20,10 +20,10 @@
 )
 
 (
-    defpoll nvme-temperature
+    defpoll gpu-temperature
     :interval "3s"
     :initial "48.85°C"
-    "./../scripts/temperature.py nvme"
+    "./../scripts/temperature.py gpu"
 )
 
 (
@@ -94,11 +94,11 @@
             (
                 label
                 :class "mainframe-label"
-                :text "[ NVME TEMP ]"
+                :text "[ GPU TEMP ]"
             )
             (
                 label
-                :text nvme-temperature
+                :text gpu-temperature
             )
         )
     )
@@ -118,11 +118,11 @@
             (
                 label
                 :class "mainframe-label"
-                :text "[ FLATLINE ]"
+                :text "[ LOADAVG ]"
             )
             (
                 label
-                :text remaining
+                :text loadavg
             )
         )
         (
