@@ -4,7 +4,8 @@ log() {
   echo "[STATUSBAR] $1"
 }
 
-CURRENT=""
+CURRENT=""  # This gives information about where eww is opened
+OPENED="no" # This about if eww is opened
 
 handle() {
   # Check that eww daemon is running
@@ -36,6 +37,7 @@ handle() {
         eww close statusbar --config /home/finn/.config/eww/"$NAME"
 
         CURRENT=""
+        OPENED="no"
       fi
 
       [ -n "$WAYBAR" ] && pkill -f "waybar --config .config/waybar/config-$NAME"
@@ -52,11 +54,16 @@ handle() {
         eww close statusbar --config /home/finn/.config/eww/"$NAME"
 
         CURRENT=""
+        OPENED="no"
       fi
     elif [ "$WINDOWS" -eq 0 ] && [ "$LABEL" != "$CURRENT" ]; then
-      # Open eww and save LABEL
-      eww open statusbar --config /home/finn/.config/eww/"$NAME"
-      CURRENT="$LABEL"
+      if [ "$OPENED" = "no" ]; then
+        # Open eww and save LABEL
+        eww open statusbar --config /home/finn/.config/eww/"$NAME"
+
+        CURRENT="$LABEL"
+        OPENED="yes"
+      fi
 
       [ -n "$WAYBAR" ] && pkill -f "waybar --config .config/waybar/config-$NAME"
     else
