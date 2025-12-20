@@ -1,0 +1,42 @@
+(include "./../modules/audio.yuck")
+(include "./../modules/brightness.yuck")
+(include "./../modules/clock.yuck")
+(include "./../modules/cpu.yuck")
+(include "./../modules/disk.yuck")
+(include "./../modules/fans.yuck")
+(include "./../modules/mainframe.yuck")
+(include "./../modules/power.yuck")
+(include "./../modules/ram.yuck")
+(include "./../modules/wireguard.yuck")
+
+(
+    defwindow statusbar
+      :monitor "ZOWIE XL LCD"
+	    :stacking "bottom"
+      :geometry 
+      (
+        geometry
+        :anchor "top right"
+        :x "0.5%"
+        :y "0.75%"
+        :width "356px"
+      )
+      (
+        box
+        :class "window"
+        :orientation "v"
+        :valign "center"
+        :halign "start"
+        :spacing 0
+        :space-evenly false
+        (clock)
+        (mainframe)
+        (power)
+        (fans)
+        (cpu)
+        (ram)
+        (disk)
+        (audio)
+        (brightness)
+      )
+)

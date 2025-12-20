@@ -2,33 +2,33 @@
     defpoll uptime
     :interval "1s"
     :initial "14 minutes"
-    "./scripts/battery.py uptime"
+    "./../scripts/battery.py uptime"
 )
 
 (
     defpoll remaining
     :interval "5s"
     :initial "20 minutes"
-    "./scripts/battery.py remaining"
+    "./../scripts/battery.py remaining"
 )
 
 (
     defpoll cpu-temperature
     :interval "1.5s"
     :initial "46.7°C"
-    "./scripts/temperature.py cpu"
+    "./../scripts/temperature.py cpu"
 )
 
 (
     defpoll nvme-temperature
     :interval "3s"
     :initial "48.85°C"
-    "./scripts/temperature.py nvme"
+    "./../scripts/temperature.py nvme"
 )
 
 (
     defpoll workspace
-    :interval "0.5s"
+    :interval "0s"
     :initial "2"
     "hyprctl activeworkspace -j | jq '.id'"
 )

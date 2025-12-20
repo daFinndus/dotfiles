@@ -2,7 +2,7 @@
     defpoll brightness-data
     :interval "500ms"
     :initial "{}"
-    "./scripts/brightness.py json"
+    "./../scripts/brightness.py json"
 )
 
 (

@@ -2,7 +2,7 @@
     defpoll ram-data
     :interval "2s"
     :initial "{}"
-    "./scripts/ram.py json"
+    "./../scripts/ram.py json"
 )
 
 (

@@ -2,7 +2,7 @@
     defpoll cpu-data
     :interval "2s"
     :initial "{}"
-    "./scripts/cpu.py json"
+    "./../scripts/cpu.py json"
 )
 
 (

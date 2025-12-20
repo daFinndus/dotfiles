@@ -2,24 +2,24 @@
     defpoll fan1-data
     :interval "1s"
     :initial "{}"
-    "./scripts/fans.sh 1 json"
+    "./../scripts/fans.sh 1 json"
 )
 
 (
     deflisten fan1-spinner
-    "./scripts/fans.sh 1 fan"
+    "./../scripts/fans.sh 1 fan"
 )
 
 (
     defpoll fan2-data
     :interval "1s"
     :initial "{}"
-    "./scripts/fans.sh 2 json"
+    "./../scripts/fans.sh 2 json"
 )
 
 (
     deflisten fan2-spinner
-    "./scripts/fans.sh 2 fan"
+    "./../scripts/fans.sh 2 fan"
 )
 
 (

@@ -2,7 +2,7 @@
     defpoll audio-data
     :interval "200ms"
     :initial "{}"
-    "./scripts/audio.py json"
+    "./../scripts/audio.py json"
 )
 
 (

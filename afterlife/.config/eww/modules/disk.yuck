@@ -2,7 +2,7 @@
     defpoll disk-data
     :interval "5s"
     :initial "{}"
-    "./scripts/disk.py json"
+    "./../scripts/disk.py json"
 )
 
 (

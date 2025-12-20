@@ -1,17 +1,17 @@
-(include "modules/audio.yuck")
-(include "modules/brightness.yuck")
-(include "modules/clock.yuck")
-(include "modules/cpu.yuck")
-(include "modules/disk.yuck")
-(include "modules/fans.yuck")
-(include "modules/mainframe.yuck")
-(include "modules/power.yuck")
-(include "modules/ram.yuck")
-(include "modules/wireguard.yuck")
+(include "./modules/audio.yuck")
+(include "./modules/brightness.yuck")
+(include "./modules/clock.yuck")
+(include "./modules/cpu.yuck")
+(include "./modules/disk.yuck")
+(include "./modules/fans.yuck")
+(include "./modules/mainframe.yuck")
+(include "./modules/power.yuck")
+(include "./modules/ram.yuck")
+(include "./modules/wireguard.yuck")
 
 (
     defwindow statusbar
-        :monitor 0
+      :monitor 0
 	    :stacking "bottom"
         :geometry 
         (
