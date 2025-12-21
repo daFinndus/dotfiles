@@ -6,7 +6,7 @@ There are some configuration files that are still hardcoded to my own hardware (
 
 Some other configurations cannot work with your hardware. System information is retrieved differently based on hardware (for example temperatures, audio, etc.).
 
-The dotfiles will work for pulseaudio, amd cpu and gpu, bluetooth and wifi compatible mainboard.
+The dotfiles will work for pulseaudio, amd cpu and gpu, bluetooth and wifi compatible mainboard (my workstation) or for dell notebooks with intel chips (my notebook). 
 
 ## Deployment
 
