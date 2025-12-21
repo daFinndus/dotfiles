@@ -1,4 +1,5 @@
 (include "./../modules/audio.yuck")
+(include "./../modules/brightness.yuck")
 (include "./../modules/clock.yuck")
 (include "./../modules/cpu.yuck")
 (include "./../modules/disk.yuck")
@@ -35,5 +36,6 @@
         (ram)
         (disk)
         (audio)
+        (brightness)
       )
 )
