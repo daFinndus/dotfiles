@@ -1,4 +1,4 @@
-# daFinndus' Dotfiles for hyprland, waybar, eww, and more
+# Dotfiles for hyprland, waybar, eww, and more
 
 ## Disclaimer
 
