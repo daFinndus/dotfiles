@@ -9,7 +9,7 @@ OPENED="no" # This about if eww is opened
 
 handle() {
   # Check that eww daemon is running
-  pgrep -f "eww daemon" >/dev/null || eww daemon --config ".config/eww/HDMI-A-1"
+  pgrep -f "eww daemon" >/dev/null || eww daemon --config ".config/eww/DEFAULT"
 
   # Get information about current workspaces and configured monitors
   WORKSPACES=$(hyprctl workspaces -j)

@@ -11,7 +11,7 @@
 
 (
     defwindow statusbar
-        :monitor 0
+      :monitor 0
 	    :stacking "bottom"
         :geometry 
         (
