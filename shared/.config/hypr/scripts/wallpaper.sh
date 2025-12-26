@@ -66,7 +66,7 @@ change() {
 
   makoctl reload
 
-  notify-send "Updated wallpaper and themes!"
+  notify-send "Selfmade wallpaper script" "Updated wallpaper and themes!"
 }
 
 change "$1"
