@@ -63,6 +63,10 @@ change() {
 
   echo "[WAYBAR] Killing waybar, restart will be executed by statusbar.sh..."
   systemctl --user restart statusbar.service
+
+  makoctl reload
+
+  notify-send "Updated wallpaper and themes!"
 }
 
 change "$1"
