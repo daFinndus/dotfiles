@@ -134,4 +134,10 @@ main() {
   log "Everything done!"
 }
 
-main
+error() {
+  log "THIS SCRIPT IS NOT READY YET."
+  log "PLEASE WAIT FOR NEW COMMIT."
+  log "DO NOT USE THIS DEPLOY SCRIPT FOR CONFIG LINKING."
+}
+
+error
