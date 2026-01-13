@@ -6,20 +6,14 @@
 !README.md
 
 # Whitelist host directories
-!afterlife/
-!afterlife/**
-
-!kabuki/
-!kabuki/**
-
-!shared/
-!shared/**
+!config/
+!config/**
 
 !icons/
 !icons/**
 
 # This is currently annoying
-shared/.config/hypr/scripts/wallpaper
+config/hypr/scripts/wallpaper
 
 !scripts/
 !scripts/**
