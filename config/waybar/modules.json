@@ -12,16 +12,14 @@
     "exec": "/home/finn/.config/waybar/scripts/audio.py",
     "format": "{}",
     "return-type": "json",
-    "on-scroll-down": "pamixer --increase 1",
-    "on-scroll-up": "pamixer --decrease 1",
     "on-click": "pamixer --toggle-mute",
     "on-click-right": "kitty --title alsamixer --class kitty -e alsamixer"
   },
   "custom/brightness": {
     "exec": "/home/finn/.config/waybar/scripts/brightness.py",
     "return-type": "json",
-    "on-scroll-down": "brightnessctl set +1%",
-    "on-scroll-up": "brightnessctl set 1%-"
+    "on-scroll-down": "brightnessctl -e4 -n2 set 5%+",
+    "on-scroll-up": "brightnessctl -e4 -n2 set 5%-"
   },
   "network": {
     "interval": 1,
