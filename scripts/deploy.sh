@@ -3,13 +3,10 @@
 set -e # Exit on error
 set -u # Exit on undefined variable
 
-HOSTNAME=$(cat /etc/hostname)
-
 THEMES="/usr/share/icons"
 
 DIRECTORY="$HOME/Dotfiles"
-SHARED="$DIRECTORY/shared"
-HOSTDIR="$DIRECTORY/$HOSTNAME"
+HOSTDIR="$DIRECTORY/CONFIG"
 
 log() {
   log=$1
