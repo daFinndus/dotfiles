@@ -1,0 +1,10 @@
+[Unit]
+Description=Set power profile based on AC state at boot
+After=default.target
+
+[Service]
+Type=oneshot
+ExecStart=/home/finn/.config/scripts/power-profile.sh
+
+[Install]
+WantedBy=default.target

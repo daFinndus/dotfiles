@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-WALLPAPER_FILE="$HOME/.config/hypr/scripts/wallpaper"
+WALLPAPER_FILE="$XDG_CONFIG_HOME/scripts/wallpaper"
 
 # Wait for hyprpaper socket
 wait_for_hyprpaper() {

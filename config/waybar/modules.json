@@ -3,9 +3,9 @@
     "format": " "
   },
   "custom/battery": {
+    "interval": 1,
     "exec": "/home/finn/.config/waybar/scripts/battery.py",
     "format": "{}",
-    "interval": 1,
     "return-type": "json"
   },
   "custom/audio": {
@@ -18,11 +18,9 @@
   "custom/brightness": {
     "exec": "/home/finn/.config/waybar/scripts/brightness.py",
     "return-type": "json",
-    "on-scroll-down": "brightnessctl -e4 -n2 set 5%+",
-    "on-scroll-up": "brightnessctl -e4 -n2 set 5%-"
   },
   "network": {
-    "interval": 1,
+    "interval": 5,
     "format": "{ifname}",
     "format-wifi": "{icon}",
     "format-ethernet": "󰌗",
