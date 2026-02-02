@@ -3,7 +3,6 @@ Description=Dynamic bar toggle based on Hyprland events
 After=graphical-session.target
 
 [Service]
-ExecStartPre=/bin/sleep 3
 ExecStart=/home/finn/.config/scripts/statusbar.sh
 Restart=always
 RestartSec=1

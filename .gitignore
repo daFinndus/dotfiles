@@ -13,7 +13,7 @@
 !icons/**
 
 # This is currently annoying
-config/hypr/scripts/wallpaper
+config/scripts/wallpaper
 
 !scripts/
 !scripts/**

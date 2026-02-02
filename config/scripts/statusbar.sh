@@ -19,22 +19,22 @@ handle() {
     WINDOWS=$(echo "$WORKSPACE" | jq -r '.windows')                    # Gives the amount of windows
     FULLSCREEN=$(echo "$WORKSPACE" | jq -r '.hasfullscreen')           # Boolean if the window is fullscreened
 
-    WAYBAR=$(pgrep -f "waybar --config $XDG_CONFIG_HOME/waybar/config-$NAME")
+    WAYBAR=$(pgrep -f waybar)
 
     # If an application is fullscreened, hide eww and waybar
     if [ "$FULLSCREEN" = "true" ]; then
       log "Fullscreen on $NAME, hiding bars"
 
-      [ -n "$WAYBAR" ] && pkill -f "waybar --config $XDG_CONFIG_HOME/waybar/config-$NAME"
+      [ -n "$WAYBAR" ] && pkill -f waybar
       continue
     fi
 
     if [ "$WINDOWS" -gt 0 ]; then
       # Show waybar
       log "At least one window detected, opening waybar on $NAME"
-      [ -z "$WAYBAR" ] && waybar --config "$XDG_CONFIG_HOME/waybar/config-$NAME" &
+      [ -z "$WAYBAR" ] && waybar &
     elif [ "$WINDOWS" -eq 0 ]; then
-      [ -n "$WAYBAR" ] && pkill -f "waybar --config $XDG_CONFIG_HOME/waybar/config-$NAME"
+      [ -n "$WAYBAR" ] && pkill -f waybar
     else
       # Close everything
       log "Don't know what to do... WINDOWS are '$WINDOWS'..."
