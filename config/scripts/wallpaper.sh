@@ -41,18 +41,9 @@ change() {
   fi
 
   echo "[WALLPAPER] Applying wallpaper: $WALLPAPER_PATH"
-  echo "[WALLPAPER] Updating hyprpaper..."
+  echo "[WALLPAPER] Updating wallpaper..."
 
-  if ! pgrep hyprpaper >/dev/null; then
-    hyprpaper
-    sleep 3
-  fi
-
-  # Check if hyprpaper is fully executed yet
-  wait_for_hyprpaper || return 1
-
-  hyprctl hyprpaper preload "$WALLPAPER_PATH"
-  hyprctl hyprpaper wallpaper ",$WALLPAPER_PATH"
+  swww img $WALLPAPER_PATH --transition-type grow --transition-duration 0.75
 
   echo "$WALLPAPER_PATH" >"$WALLPAPER_FILE"
   echo "[WALLPAPER] Saved to $WALLPAPER_FILE"
