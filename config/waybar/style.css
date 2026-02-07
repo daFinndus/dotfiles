@@ -3,15 +3,20 @@
 
 * {
   font-family: "Minecraft";
-  font-size: 12pt;
+  font-size: 13pt;
 }
 
 window#waybar {
   color: @fg;
-  border-radius: 7px;
+  border-radius: 8px;
   padding-left: 2px;
   padding-right: 2px;
   background-color: transparent;
+}
+
+window#waybar.empty #window {
+  background: transparent;
+  border: none;
 }
 
 #system {
@@ -51,8 +56,8 @@ window#waybar {
   color: @fg;
   border: 2px solid @inactive;
   border-radius: 8px;
-  padding-left: 8px;
-  padding-right: 8px;
+  padding-left: 16px;
+  padding-right: 16px;
 }
 
 #tray {
@@ -66,21 +71,34 @@ window#waybar {
   color: @cyan;
 }
 
+#custom-updater,
+#network,
+#bluetooth,
+#backlight,
+#pulseaudio,
+#battery {
+  font-size: 16px;
+  padding-right: 8px;
+  padding-left: 8px;
+}
+
+#network {
+  color: @cyan;
+}
+
 #bluetooth {
-  font-size: 16pt;
-  padding-right: 16px;
   color: @blue;
 }
 
+#backlight {
+  color: @cyan;
+}
+
 #pulseaudio {
-  font-size: 16pt;
-  padding-right: 16px;
   color: @yellow;
 }
 
-#backlight {
-  font-size: 15pt;
-  padding-right: 20px;
+#battery {
   color: @green;
 }
 
@@ -92,6 +110,23 @@ window#waybar {
   padding-left: 12px;
 }
 
+#custom-updater {
+  background: @bg;
+  border: 2px solid @inactive;
+  border-radius: 8px;
+  padding-left: 12px;
+  padding-right: 12px;
+  margin-left: 4px;
+}
+
+#custom-updater.updated {
+  color: @blue;
+}
+
+#custom-updater.pending {
+  color: #9d8888;
+}
+
 #custom-power {
   background-color: @red;
   padding-right: 14px;
@@ -99,12 +134,6 @@ window#waybar {
   font-size: 22px;
   border-radius: 8px;
   color: @fg;
-}
-
-#battery {
-  padding-right: 12px;
-  font-size: 16pt;
-  color: @green;
 }
 
 /* Styling the main tooltip box under the custom updater */

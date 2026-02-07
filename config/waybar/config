@@ -1,4 +1,5 @@
 {
+  "output": "eDP-1",
   "layer": "top",
   "position": "top",
   "height": 36,
@@ -8,7 +9,8 @@
   "modules-left": [
     "clock",
     "custom/space",
-    "hyprland/workspaces"
+    "hyprland/workspaces",
+    "custom/updater"
   ],
   "modules-center": [
     "hyprland/window"
@@ -21,6 +23,6 @@
   ],
   "group/system": {
     "orientation": "horizontal",
-    "modules": [ "network", "bluetooth", "backlight", "pulseaudio", "battery" ]
+    "modules": [ "network", "bluetooth", "pulseaudio", "battery" ]
   },
 }

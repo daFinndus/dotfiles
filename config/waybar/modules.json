@@ -37,7 +37,9 @@
     "tooltip-format": "Volume ({volume}%)"
   },
   "hyprland/window": {
-    "format": "{initialTitle}"
+    "format": "{}",
+    "icon": true,
+    "icon-size": 16,
   },
   "battery": {
     "format": "{icon}",
@@ -58,9 +60,8 @@
   },
   "clock": {
     "format": "{:%I:%M %p}",
-    "on-click": "rofi -disable-history -show drun",
     "tooltip": true,
-    "tooltip-format": "{:%d %B, %Y on a %A}"
+    "tooltip-format": "{:%d. %B on a %A}"
   },
   "tray": {
     "icon-size": 20,
@@ -81,5 +82,13 @@
     "on-scroll-down": "brightnessctl s 5%-",
     "tooltip": true,
     "tooltip-format": "Current brightness: {percent}%"
-  }
+  },
+  "custom/updater":{
+    "format": "  {}",
+    "exec": "~/.config/waybar/scripts/update-check.sh",
+    "return-type": "json",
+    "exec-if": "[[ $(checkupdates | wc -l) ]]", 
+    "interval": 15, 
+    "on-click": "kitty --class kitty --title updater -e yay -Syu && notify-send 'The system has been updated'",
+  },
 }
