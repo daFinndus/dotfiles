@@ -53,7 +53,7 @@ change() {
   wal -i "$WALLPAPER_PATH"
 
   echo "[WAYBAR] Killing waybar, restart will be executed by statusbar.sh..."
-  systemctl --user restart statusbar.service
+  kitty -e systemctl --user restart statusbar.service 2>/dev/null
 }
 
 change "$1"

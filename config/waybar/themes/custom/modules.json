@@ -1,0 +1,64 @@
+{
+  "custom/spacer": {
+    "format": " "
+  },
+  "custom/battery": {
+    "interval": 1,
+    "exec": "/home/finn/.config/waybar/scripts/battery.py",
+    "format": "{}",
+    "return-type": "json"
+  },
+  "custom/audio": {
+    "exec": "/home/finn/.config/waybar/scripts/audio.py",
+    "format": "{}",
+    "return-type": "json",
+    "on-click": "pamixer --toggle-mute",
+    "on-click-right": "kitty --title alsamixer --class kitty -e alsamixer"
+  },
+  "custom/brightness": {
+    "exec": "/home/finn/.config/waybar/scripts/brightness.py",
+    "return-type": "json",
+  },
+  "network": {
+    "interval": 5,
+    "format": "{ifname}",
+    "format-wifi": "{icon}",
+    "format-ethernet": "󰌗",
+    "format-disabled": "󰤮 ",
+    "format-disconnected": "󰤮 ",
+    "format-icons": ["󰤫 ", "󰤯 ", "󰤟 ", "󰤢 ", "󰤥 ", "󰤨 "],
+    "tooltip-format": "Signalstrength: {signalStrength}%",
+    "tooltip-format-wifi": "{essid} via {ifname}",
+    "tooltip-format-ethernet": "{ipaddr} via {ifname}",
+    "tooltip-format-disconnected": "Disconnected",
+    "on-click-right": "kitty --title iwctl --class kitty -e iwctl"
+  },
+  "bluetooth": {
+    "on-click": "/home/finn/.config/waybar/scripts/bluetooth.sh",
+    "on-click-right": "kitty --title bluetoothctl --class kitty -e bluetoothctl",
+    "format-on": "󰂯",
+    "format-connected": "󰂱",
+    "format-no-controller": "󰂲",
+    "format-off": "󰂲",
+    "tooltip-format-disabled": "Bluetooth controller is disabled",
+    "tooltip-format-on": "Bluetooth is on",
+    "tooltip-format-off": "Bluetooth is off",
+    "tooltip-format-connected": "{device_enumerate}",
+    "tooltip-format-connected-battery": "{device_enumerate}",
+    "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+    "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_battery_percentage}%\t{device_address}"
+  },
+  "pulseaudio": {
+    "format": "{format_source}",
+    "format-source": "",
+    "format-source-muted": ""
+  },
+  "clock": {
+    "timezone": "Europe/Berlin",
+    "format-alt": "{:%d.%m.%Y}",
+    "tooltip": false
+  },
+  "tray": {
+    "spacing": 16
+  }
+}
