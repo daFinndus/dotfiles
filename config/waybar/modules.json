@@ -40,6 +40,7 @@
     "format": "{}",
     "icon": true,
     "icon-size": 16,
+    "max-length": 72,
   },
   "battery": {
     "format": "{icon}",
@@ -89,6 +90,6 @@
     "return-type": "json",
     "exec-if": "[[ $(checkupdates | wc -l) ]]", 
     "interval": 15, 
-    "on-click": "kitty --class kitty --title updater -e yay -Syu && notify-send 'The system has been updated'",
+    "on-click": "kitty --class kitty --title updater -e yay -Syu && notify-send 'Updater' 'The system has been updated'",
   },
 }

@@ -120,7 +120,7 @@ window#waybar.empty #window {
 }
 
 #custom-updater.updated {
-  color: @blue;
+  color: @green;
 }
 
 #custom-updater.pending {
