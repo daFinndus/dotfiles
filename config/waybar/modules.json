@@ -1,15 +1,12 @@
 {
   "network": {
     "format": "{icon}",
+    "format-disconnected": "󰤭",
     "format-icons": [
       "󰤠", "󰤢", "󰤥", "󰤨" 
     ],
-    "format-disconnected": "󰤭",
+    "tooltip-format": "{essid} via {ifname} at {signalStrength}%",
     "on-click": "kitty --title iwctl --class kitty -e iwctl",
-    "format-wifi": "{essid} ({signalStrength}%)",
-    "format-ethernet":   "󰤥",
-    "interface": "wlan0", "type": "wifi",
-    "interface": "br0", "type": "ethernet"
   },
   "bluetooth": {
     "format": "{icon}",
@@ -21,7 +18,7 @@
     "tooltip-format-disabled": "Disconnected (off)",
     "tooltip-format-connected": "{device_alias} ({device_battery_percentage}%)",
     "tooltip-format-enumerate-connected": "{device_alias} ({device_battery_percentage}%)",
-    "on-click": "blueman-manager"
+    "on-click": "kitty --title bluetoothctl --class kitty -e bluetoothctl"
   },
   "pulseaudio": {
     "format": "{icon}",
@@ -38,6 +35,9 @@
     },
     "on-click": "pavucontrol",
     "tooltip-format": "Volume ({volume}%)"
+  },
+  "hyprland/window": {
+    "format": "{initialTitle}"
   },
   "battery": {
     "format": "{icon}",
