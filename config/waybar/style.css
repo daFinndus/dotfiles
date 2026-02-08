@@ -74,24 +74,10 @@ window#waybar.empty #window {
 #custom-updater,
 #network,
 #bluetooth,
-#backlight,
 #pulseaudio,
 #battery {
   padding-right: 8px;
   padding-left: 8px;
-}
-
-#idle_inhibitor {
-  padding-left: 8px;
-  padding-right: 10px;
-}
-
-#idle_inhibitor.activated {
-  color: @green;
-}
-
-#idle_inhibitor.deactivated {
-  color: @red;
 }
 
 #network {
@@ -100,10 +86,6 @@ window#waybar.empty #window {
 
 #bluetooth {
   color: @blue;
-}
-
-#backlight {
-  color: @cyan;
 }
 
 #pulseaudio {

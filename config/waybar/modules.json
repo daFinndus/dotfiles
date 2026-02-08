@@ -74,16 +74,6 @@
     "tooltip-format": "Power menu (wlogout)",
     "on-click": "wlogout"
   },
-  "backlight": {
-    "format": "{icon}",
-    "format-icons": ["󰃞", "󰃝", "󰃟", "󰃠"],
-    "interval": 2,
-    "on-click": "hyprsunset -t 3750",
-    "on-scroll-up": "brightnessctl s +5%",
-    "on-scroll-down": "brightnessctl s 5%-",
-    "tooltip": true,
-    "tooltip-format": "Current brightness: {percent}%"
-  },
   "custom/updater":{
     "format": "  {}",
     "exec": "~/.config/waybar/scripts/update-check.sh",
@@ -91,12 +81,5 @@
     "exec-if": "[[ $(checkupdates | wc -l) ]]", 
     "interval": 15, 
     "on-click": "kitty --class kitty --title updater -e yay -Syu && notify-send 'Updater' 'The system has been updated'",
-  },
-  "idle_inhibitor": {
-    "format": "{icon}",
-    "format-icons": {
-      "activated": "󰮔",
-      "deactivated": "󰮕"
-    },
   },
 }
