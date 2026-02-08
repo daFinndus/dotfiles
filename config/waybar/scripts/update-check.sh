@@ -18,7 +18,7 @@ if [ -z "$list" ]; then
 else
   # Format the tooltip: replace actual newlines with literal '\n' for JSON
   # We limit to the first 25 packages to prevent the tooltip from being too large
-  tooltip=$(echo "$list" | head -n 25 | sed -z 's/\n/\\n/g')
+  tooltip=$(echo "$list" | head -n 25 | awk '{printf "%s%s", sep, $0; sep="\\n"}')
   [ "$count" -gt 25 ] && tooltip="${tooltip}and more..."
 
   # Output JSON object Waybar expects

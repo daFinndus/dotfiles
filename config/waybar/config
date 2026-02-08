@@ -23,6 +23,6 @@
   ],
   "group/system": {
     "orientation": "horizontal",
-    "modules": [ "network", "bluetooth", "pulseaudio", "battery" ]
+    "modules": [ "network", "bluetooth", "idle_inhibitor", "pulseaudio", "battery" ]
   },
 }

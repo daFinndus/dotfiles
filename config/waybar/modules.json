@@ -92,4 +92,11 @@
     "interval": 15, 
     "on-click": "kitty --class kitty --title updater -e yay -Syu && notify-send 'Updater' 'The system has been updated'",
   },
+  "idle_inhibitor": {
+    "format": "{icon}",
+    "format-icons": {
+      "activated": "󰮔",
+      "deactivated": "󰮕"
+    },
+  },
 }
