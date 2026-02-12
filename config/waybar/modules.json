@@ -20,6 +20,9 @@
     "tooltip-format-enumerate-connected": "{device_alias} ({device_battery_percentage}%)",
     "on-click": "kitty --title bluetoothctl --class kitty -e bluetoothctl"
   },
+  "idle_inhibitor": {
+    "format": "Inhibitor: {status}"
+  },
   "pulseaudio": {
     "format": "{icon}",
     "format-muted": "󰖁",

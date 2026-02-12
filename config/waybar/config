@@ -10,7 +10,8 @@
     "clock",
     "custom/space",
     "hyprland/workspaces",
-    "custom/updater"
+    "custom/updater",
+    "idle_inhibitor"
   ],
   "modules-center": [
     "hyprland/window"
