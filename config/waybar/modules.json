@@ -39,12 +39,6 @@
     "on-click": "pavucontrol",
     "tooltip-format": "Volume ({volume}%)"
   },
-  "hyprland/window": {
-    "format": "{}",
-    "icon": true,
-    "icon-size": 16,
-    "max-length": 72,
-  },
   "battery": {
     "format": "{icon}",
     "format-icons": [

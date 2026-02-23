@@ -13,9 +13,6 @@
     "custom/updater",
     "idle_inhibitor"
   ],
-  "modules-center": [
-    "hyprland/window"
-  ],
   "modules-right": [
     "tray",
     "group/system",
