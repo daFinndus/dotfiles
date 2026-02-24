@@ -8,19 +8,16 @@
   "include": ["/home/finn/.config/waybar/modules.json"],
   "modules-left": [
     "clock",
-    "custom/space",
     "hyprland/workspaces",
-    "custom/updater",
-    "idle_inhibitor"
+    "idle_inhibitor",
+    "power-profiles-daemon",
+    "custom/updater"
   ],
   "modules-right": [
     "tray",
-    "group/system",
-    "custom/space",
+    "network",
+    "pulseaudio",
+    "battery",
     "custom/power"
   ],
-  "group/system": {
-    "orientation": "horizontal",
-    "modules": [ "network", "bluetooth", "pulseaudio", "battery" ]
-  },
 }

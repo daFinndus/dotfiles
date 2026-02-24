@@ -1,82 +1,63 @@
 {
   "network": {
-    "format": "{icon}",
-    "format-disconnected": "󰤭",
-    "format-icons": [
-      "󰤠", "󰤢", "󰤥", "󰤨" 
-    ],
-    "tooltip-format": "{essid} via {ifname} at {signalStrength}%",
-    "on-click": "kitty --title iwctl --class kitty -e iwctl",
-  },
-  "bluetooth": {
-    "format": "{icon}",
-    "format-icons": "󰂯",
-    "format-connected": "󰂯",
-    "format-disconnected": "󰂲",
-    "format-disabled": "󰂲",
-    "tooltip-format": "Disconnected (on)",
-    "tooltip-format-disabled": "Disconnected (off)",
-    "tooltip-format-connected": "{device_alias} ({device_battery_percentage}%)",
-    "tooltip-format-enumerate-connected": "{device_alias} ({device_battery_percentage}%)",
-    "on-click": "kitty --title bluetoothctl --class kitty -e bluetoothctl"
+    "format-wifi": "{essid} at {signalStrength}%",
+    "format-ethernet": "Connected via ethernet",
+    "format-disconnected": "No network",
+    "format-disabled": "Interface disabled",
+    "on-click-right": "kitty --title iwctl --class kitty -e iwctl",
+    "tooltip": true,
+    "tooltip-format": "{ipaddr}/{cidr} via {gwaddr}",
   },
   "idle_inhibitor": {
-    "format": "Inhibitor: {status}"
+    "format": "Inhibitor: {status}",
+    "tooltip": false,
   },
   "pulseaudio": {
-    "format": "{icon}",
-    "format-muted": "󰖁",
-    "format-icons": {
-      "headphones": "",
-      "headset": "󱡏",
-      "default": [
-        "󰝟",
-        "󱄡",
-        "󰖀",
-        "󰕾"
-      ]
-    },
-    "on-click": "pavucontrol",
-    "tooltip-format": "Volume ({volume}%)"
+    "format": "Volume at {volume}%",
+    "format-muted": "Volume muted",
+    "format-bluetooth": "Connected via bluetooth",
+    "on-click-right": "pavucontrol",
   },
   "battery": {
-    "format": "{icon}",
-    "format-icons": [
-      "󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"
-    ],
-    "format-charging": "󰂄",
-    "format-full": "󱟢",
-    "format-warning": "󰂃",
-    "tooltip": true,
-    "tooltip-format": "Discharging ({capacity}%)",
-    "tooltip-format-charging": "Charging ({capacity}%)",
-    "tooltip-format-full": "Full ({capacity}%)"
+    "format": "Battery at {capacity}%",
+    "format-charging": "Charging...",
+    "format-full": "Battery full",
+    "format-warning": "Battery dying...",
+    "design-capacity": true,
   },
   "custom/space": {
     "format": " ",
-    "tooltip": false
+    "tooltip": false,
   },
   "clock": {
     "format": "{:%I:%M %p}",
     "tooltip": true,
-    "tooltip-format": "{:%d. %B on a %A}"
+    "tooltip-format": "{:%d. %B on a %A}",
   },
   "tray": {
-    "icon-size": 20,
-    "spacing": 16
+    "icon-size": 16,
+    "spacing": 16,
   },
   "custom/power": {
     "format": "󰐥",
     "tooltip": true,
     "tooltip-format": "Power menu (wlogout)",
-    "on-click": "wlogout"
+    "on-click": "wlogout",
+  },
+  "power-profiles-daemon": {
+    "format": "Profile: {icon}",
+    "format-icons": {
+      "balanced": "Balanced",
+      "power-saver": "Chillin'",
+      "performance": "Performance",
+    }
   },
   "custom/updater":{
-    "format": "  {}",
+    "format": "{}",
     "exec": "~/.config/waybar/scripts/update-check.sh",
     "return-type": "json",
-    "exec-if": "[[ $(checkupdates | wc -l) ]]", 
-    "interval": 15, 
-    "on-click": "kitty --class kitty --title updater -e yay -Syu && notify-send 'Updater' 'The system has been updated'",
+    "exec-if": "[[ $(checkupdates | wc -l) ]]",
+    "interval": 15,
+    "on-click-right": "kitty --class kitty --title updater -e yay -Syu && notify-send 'Updater' 'The system has been updated'",
   },
 }

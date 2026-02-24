@@ -3,29 +3,22 @@
 
 * {
   font-family: "Minecraft";
-  font-size: 13pt;
+  font-size: 12pt;
 }
 
 window#waybar {
   color: @fg;
-  border-radius: 8px;
-  padding-left: 2px;
-  padding-right: 2px;
   background-color: transparent;
 }
 
-window#waybar.empty #window {
-  background: transparent;
-  border: none;
-}
-
-#system {
-  background: @bg;
-  border-radius: 8px;
-  border: 2px solid @inactive;
-}
-
-#workspaces {
+#workspaces,
+#clock,
+#idle_inhibitor,
+#network,
+#pulseaudio,
+#battery,
+#custom-updater,
+#power-profiles-daemon {
   background: @bg;
   border: 2px solid @inactive;
   border-radius: 8px;
@@ -33,9 +26,20 @@ window#waybar.empty #window {
   padding-right: 4px;
 }
 
+#clock,
+#custom-updater,
+#idle_inhibitor,
+#network,
+#pulseaudio,
+#pulseaudio,
+#battery,
+#power-profiles-daemon {
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
 #workspaces button {
-  min-width: 14px;
-  padding: 0 8px;
+  min-width: 12px;
   color: @inactive;
   transition: color 0.3s ease;
 }
@@ -51,31 +55,7 @@ window#waybar.empty #window {
   background: transparent;
 }
 
-#window {
-  background-color: @bg;
-  color: @fg;
-  border: 2px solid @inactive;
-  border-radius: 8px;
-  padding-left: 16px;
-  padding-right: 16px;
-}
-
 #tray {
-  padding-right: 12px;
-}
-
-#network {
-  padding-left: 8px;
-  padding-right: 16px;
-  font-size: 14px;
-  color: @cyan;
-}
-
-#idle_inhibitor {
-  background-color: @bg;
-  border: 2px solid @inactive;
-  border-radius: 8px;
-  padding-left: 12px;
   padding-right: 12px;
 }
 
@@ -85,14 +65,6 @@ window#waybar.empty #window {
 
 #idle_inhibitor.deactivated {
   color: @red;
-}
-
-#network,
-#bluetooth,
-#pulseaudio,
-#battery {
-  padding-right: 8px;
-  padding-left: 8px;
 }
 
 #network {
@@ -111,23 +83,6 @@ window#waybar.empty #window {
   color: @green;
 }
 
-#clock {
-  background: @bg;
-  border: 2px solid @inactive;
-  border-radius: 8px;
-  padding-right: 12px;
-  padding-left: 12px;
-}
-
-#custom-updater {
-  background: @bg;
-  border: 2px solid @inactive;
-  border-radius: 8px;
-  padding-left: 12px;
-  padding-right: 12px;
-  margin-left: 4px;
-}
-
 #custom-updater.updated {
   color: @green;
 }
@@ -136,13 +91,25 @@ window#waybar.empty #window {
   color: #9d8888;
 }
 
+#power-profiles-daemon.power-saver {
+  color: @green;
+}
+
+#power-profiles-daemon.balanced {
+  color: @cyan;
+}
+
+#power-profiles-daemon.performance {
+  color: @red;
+}
+
 #custom-power {
+  color: @fg;
+  font-size: 22px;
   background-color: @red;
+  border-radius: 8px;
   padding-right: 14px;
   padding-left: 12px;
-  font-size: 22px;
-  border-radius: 8px;
-  color: @fg;
 }
 
 /* Styling the main tooltip box under the custom updater */
@@ -157,5 +124,5 @@ tooltip label {
   font-size: 12px; /* Make text smaller */
   color: @fg;
   padding: 2px 6px; /* Shrink the box by reducing internal space */
-  margin: 0px; /* Remove extra outer spacing */
+  margin: 2px; /* Remove extra outer spacing */
 }
