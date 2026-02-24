@@ -2,7 +2,6 @@
   "output": "eDP-1",
   "layer": "top",
   "position": "top",
-  "height": 36,
   "margin": "8 8 0 8",
   "spacing": 4,
   "include": ["/home/finn/.config/waybar/modules.json"],
