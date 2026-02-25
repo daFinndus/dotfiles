@@ -9,7 +9,11 @@
     "tooltip-format": "{ipaddr}/{cidr} via {gwaddr}",
   },
   "idle_inhibitor": {
-    "format": "Inhibitor: {status}",
+    "format": "Inhibitor: {icon}",
+    "format-icons": {
+      "activated": "Activated",
+      "deactivated": "Deactivated",
+    },
     "tooltip": false,
   },
   "pulseaudio": {

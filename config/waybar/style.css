@@ -80,7 +80,15 @@ window#waybar {
 }
 
 #battery {
+  color: @white;
+}
+
+#battery.charging {
   color: @green;
+}
+
+#battery.warning {
+  color: @red;
 }
 
 #custom-updater.updated {
@@ -100,7 +108,7 @@ window#waybar {
 }
 
 #power-profiles-daemon.performance {
-  color: @red;
+  color: @yellow;
 }
 
 #custom-power {
